@@ -31,10 +31,7 @@ The `template` can use the following three types:
 * Remote git repo from `github`, 
 ```bash
 $ create-custom-react-app -t <username>/<repo-name>  <project-name>
-```
-
-example:
-```bash
+## example
 $ create-custom-react-app -t likun7981/test-git test-remote-project
 ```
 
@@ -47,7 +44,9 @@ $ npm install -g react-app-template-simple
 $ create-custom-react-app -t simple test-global-npm-package-project
 ```
 
-* Local path template,  example
+* Local path template, example
+> ⚠️ relative local path must startWith `.`, example `./relative-path` instead of `relative-path` 
+
 ```bash
 $ create-custom-react-app -t relative-or-absolute-local-path test-local-path-project
 ```
