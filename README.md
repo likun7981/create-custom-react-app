@@ -58,8 +58,9 @@ $ create-custom-react-app react-app-template-custom-name
 ```
 2. Do what you want to do with the template
 3. You can publish to npm, push to git or save locally, after it you can simple init it a project use `create-custom-react-app`
-> ⚠️ Note: The __.ignore__ file must rename to __ignore__, you can see https://github.com/npm/npm/issues/1862  
-https://qurl.com/5ysyl
+> ⚠️ Note: The __.gitignore__ file must rename to __gitignore__, you can see  
+1.https://github.com/npm/npm/issues/1862  
+2.https://qurl.com/5ysyl
 
 ## Custom config  
 You can use [react-app-rewired](https://github.com/timarney/react-app-rewired) to custom config,
