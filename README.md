@@ -11,7 +11,7 @@ $ npm install -g create-react-app
 $ npm install -g create-custom-react-app
 ```
 
-# Usage
+## Usage
 ```bash
 $ create-custom-react-app --help
 
@@ -45,11 +45,21 @@ $ create-custom-react-app -t simple test-global-npm-package-project
 ```
 
 * Local path template, example
-> ⚠️ relative local path must startWith `.`, example `./relative-path` instead of `relative-path` 
+> ⚠️ Note: relative local path must start with `.`, example `./relative-path` instead of `relative-path` 
 
 ```bash
 $ create-custom-react-app -t relative-or-absolute-local-path test-local-path-project
 ```
+## Create template
+It is recommended that you customize the template on the basis of [the official template](https://github.com/facebookincubator/create-react-app/tree/master/packages/react-scripts/template)
+1. Create `official template`
+```bash
+$ create-custom-react-app react-app-template-custom-name
+```
+2. Do what you want to do with the template
+3. You can publish to npm, push to git or save locally, after it you can simple init it a project use `create-custom-react-app`
+> ⚠️ Note: The __.ignore__ file must rename to __ignore__, you can see https://github.com/npm/npm/issues/1862  
+https://qurl.com/5ysyl
 
 ## Custom config  
 You can use [react-app-rewired](https://github.com/timarney/react-app-rewired) to custom config,
