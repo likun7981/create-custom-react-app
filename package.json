@@ -1,0 +1,29 @@
+{
+  "name": "create-custom-react-app",
+  "version": "1.0.3",
+  "description": "create react app with custom template",
+  "main": "index.js",
+  "bin": {
+    "create-custom-react-app": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/likun7981/create-custom-react-app.git"
+  },
+  "author": "likun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/likun7981/create-custom-react-app/issues"
+  },
+  "homepage": "https://github.com/likun7981/create-custom-react-app#readme",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "cross-spawn": "^5.1.0",
+    "download-github-repo": "^0.1.3",
+    "ora": "^1.3.0"
+  }
+}
