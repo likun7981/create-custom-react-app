@@ -6,9 +6,6 @@
   "bin": {
     "create-custom-react-app": "index.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/likun7981/create-custom-react-app.git"
