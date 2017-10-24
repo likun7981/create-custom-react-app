@@ -1,31 +1,31 @@
 #!/usr/bin/env node
 
-const commander = require("commander");
-const spawn = require("cross-spawn");
-const chalk = require("chalk");
-const fs = require("fs");
-const os = require("os");
-const ora = require("ora");
-const downloadGithubRepo = require("download-github-repo");
-const path = require("path");
+const commander = require('commander');
+const spawn = require('cross-spawn');
+const chalk = require('chalk');
+const fs = require('fs');
+const os = require('os');
+const ora = require('ora');
+const downloadGithubRepo = require('download-github-repo');
+const path = require('path');
 
-const packageJson = require("./package.json");
+const packageJson = require('./package.json');
 
-const templateNpmPackagePrefix = "react-app-template-";
+const templateNpmPackagePrefix = 'react-template-';
 
 const program = new commander.Command(packageJson.name)
-  .usage(`${chalk.green("<project-directory>")} [options]`)
+  .usage(`${chalk.green('<project-directory>')} [options]`)
   .option(
-    "-t, --template [template-path-or-name]",
-    "create react app use custom template"
+    '-t, --template [template-path-or-name]',
+    'create react app use custom template'
   )
   .allowUnknownOption()
-  .on("--help", () => {
+  .on('--help', () => {
     console.log();
     console.log(
-      `  Other options are the same as ${chalk.green("create-react-app")}`
+      `  Other options are the same as ${chalk.green('create-react-app')}`
     );
-    spawn.sync("create-react-app", ["--help"], { stdio: "inherit" });
+    spawn.sync('create-react-app', ['--help'], { stdio: 'inherit' });
   })
   .parse(process.argv);
 
@@ -45,6 +45,7 @@ if (program.template) {
 }
 if (template) {
   handleTemplate(template)
+    .then(templateDir => path.join(templateDir, 'template'))
     .then(finallTemplate => {
       rawArgs.push(`--internal-testing-template=${finallTemplate}`);
       createReactApp(rawArgs);
@@ -58,7 +59,7 @@ if (template) {
 }
 
 function createReactApp(args) {
-  const result = spawn.sync("create-react-app", args, { stdio: "inherit" });
+  const result = spawn.sync('create-react-app', args, { stdio: 'inherit' });
   if (result.error) {
     console.log(result.error.message);
   }
@@ -73,7 +74,7 @@ function globalNpmTemplatePackage(name) {
   if (name.indexOf(templateNpmPackagePrefix) === -1) {
     name = templateNpmPackagePrefix + name;
   }
-  fullPath = path.join(__dirname, "../", name);
+  fullPath = path.join(__dirname, '../', name);
   return {
     isExists: fs.existsSync(fullPath),
     path: fullPath,
@@ -88,14 +89,14 @@ function handleTemplate(template) {
       console.log(`Local template ${chalk.green(template)}`);
       return resolve(template);
     }
-    if (template.indexOf("/") !== -1) {
+    if (template.indexOf('/') !== -1) {
       console.log(`Start download template ${chalk.green(template)}`);
       const spinner = ora(`Downloading template ${chalk.green(template)}...`);
       console.log();
       spinner.start();
       const tmp = path.join(
         os.tmpdir(),
-        "react-app-template-",
+        'react-app-template-',
         `${new Date().valueOf()}`
       );
       return downloadGithubRepo(template, tmp, error => {

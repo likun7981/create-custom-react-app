@@ -1,6 +1,6 @@
 {
   "name": "create-custom-react-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "create react app with custom template",
   "main": "index.js",
   "bin": {
