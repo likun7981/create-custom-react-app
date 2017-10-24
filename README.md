@@ -35,11 +35,11 @@ $ create-custom-react-app -t <username>/<repo-name>  <project-name>
 $ create-custom-react-app -t likun7981/test-git test-remote-project
 ```
 
-* Global npm package like [Yeoman](https://github.com/yeoman/yeoman), the prefix is `react-app-template-<customname>`, example:
+* Global npm package like [Yeoman](https://github.com/yeoman/yeoman), the prefix is `react-template-<customname>`, example:
 
 ```bash
 # Install the template with global
-$ npm install -g react-app-template-simple
+$ npm install -g react-template-simple
 
 $ create-custom-react-app -t simple test-global-npm-package-project
 ```
@@ -54,7 +54,7 @@ $ create-custom-react-app -t relative-or-absolute-local-path test-local-path-pro
 It is recommended that you customize the template on the basis of [the official template](https://github.com/facebookincubator/create-react-app/tree/master/packages/react-scripts/template)
 1. Create `official template`
 ```bash
-$ create-custom-react-app react-app-template-custom-name
+$ create-custom-react-app react-template-custom-name
 ```
 2. Do what you want to do with the template
 3. You can publish to npm, push to git or save locally, after it you can simple init it a project use `create-custom-react-app`
@@ -65,6 +65,9 @@ $ create-custom-react-app react-app-template-custom-name
 ## Custom config  
 You can use [react-app-rewired](https://github.com/timarney/react-app-rewired) to custom config,
 more config package you can see [react-app-rewire-contrib](https://github.com/osdevisnot/react-app-rewire-contrib)
+
+## Template
+* [react-template-router](https://github.com/likun7981/react-template-router)
 
 ## Why
 Because we want to customize the template, but you don't want to change [create-react-app](https://github.com/facebookincubator/create-react-app) all the time.
